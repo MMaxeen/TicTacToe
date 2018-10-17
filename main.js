@@ -44,10 +44,11 @@ var verifierCombinaisons = function() {
                 message.textContent = 'You rock ' + currentPlayer + ' !';
                 partieGagnee = true;
             }
+            if (nbCoups == 9 ) {
+                document.querySelector('#display-message').textContent='You loose !';
+                }
+    
         });
-        if (nbCoups == 9) {
-            document.querySelector('#display-message').textContent='No one';
-            }
     };
     
     cells.forEach(function(cell) {
@@ -63,9 +64,9 @@ var verifierCombinaisons = function() {
     var start = document.querySelector(".morpion"),
     stop = document.querySelector(".stop"),
     clock = document.querySelector(".clock"),
-    timerState = "stopped", //Clock is either stopped, paused, or running
+    timerState = "stopped", 
     startTime, elapsed, timer;
-//timer states
+
 
 start.addEventListener("click", function(){
   if(timerState == "stopped"){
@@ -77,32 +78,24 @@ start.addEventListener("click", function(){
   }
 });
 
-stop.addEventListener("click", function(){
-  if(!this.classList.contains("disabled") ){
-    timerState = "stopped";
-    clock.classList.remove("paused", "running");
-    start.innerHTML = "Start";
-    clock.innerHTML = "00 : 00 : 00"
-  }
-});
 
 function updateTime(){
 
   timer = requestAnimationFrame(updateTime);
   elapsed = new Date(Date.now() - startTime);
   
-  //minutes
+
   var mins = elapsed.getMinutes();
-  //seconds  
+ 
   var secs = elapsed.getSeconds();
-  // hundredths
+
   var hund = Math.floor(elapsed.getMilliseconds()/10);
-   //add leading zeros
+
   if ( mins < 10 ){ mins = "0"+ mins }
   if ( secs < 10 ){ secs = "0"+ secs}
   if ( hund < 10 ){ hund = "0"+ hund }
   
-  //update clock
-  clock.innerHTML = mins + " : "+ secs + " : " + hund;
+
+  clock.textContent = mins + " : "+ secs + " : " + hund;
   
 };

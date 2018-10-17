@@ -59,15 +59,6 @@ body{
     background-position: center;
 }
 
-.cercle2{
-    background-image: url(../circle.gif);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 200px;
-    height: 200px;
-}
-
 .actions{
     width: 200px;
     height: 65px;
