@@ -9,6 +9,7 @@ var partieGagnee = false;
 // var name2 = prompt("Nom du joueur 2");
 
 var nbCoups = 0;
+var i = 0;
 
 var combinaisons = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
 // var combinaison = combinaisons[0];
@@ -22,7 +23,6 @@ var ajouterSymbole = function(cell){
     }
     tourDuJoueur1 = !tourDuJoueur1;
   }
-  console.log('test');
 };
 
 var verifierCombinaisons = function() {
@@ -44,10 +44,10 @@ var verifierCombinaisons = function() {
                 message.textContent = 'You rock ' + currentPlayer + ' !';
                 partieGagnee = true;
             }
-            if (nbCoups == 9 ) {
-                document.querySelector('#display-message').textContent='You loose !';
+            if (nbCoups === 9 && cells[combinaison[0]].classList[1] !== undefined) {
+                console.log('perdu');
+                document.getElementById('display-message').textContent='You loose !';
                 }
-    
         });
     };
     
