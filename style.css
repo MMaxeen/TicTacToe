@@ -33,6 +33,7 @@ body{
 
 .cell{
     flex: 1;
+    cursor: pointer;
 }
 
 .cell:nth-child(2){
