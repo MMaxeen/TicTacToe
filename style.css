@@ -46,14 +46,14 @@ body{
   }
 
 .croix{
-    background-image: url(../cross.gif);
+    background-image: url(img/cross.gif);
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .cercle{
-    background-image: url(../circle.gif);
+    background-image: url(img/circle.gif);
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
