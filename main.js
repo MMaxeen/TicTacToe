@@ -38,7 +38,7 @@ var verifierCombinaisons = function() {
                 } else {
                     currentPlayer = 'Player 1';
                 }
-                cancelAnimationFrame( timer );
+                cancelAnimationFrame(timer);
                 timerState = "paused";
                 clock.classList.add("paused");
                 message.textContent = 'You rock ' + currentPlayer + ' !';
@@ -46,26 +46,26 @@ var verifierCombinaisons = function() {
             }
             if (nbCoups === 9 && cells[combinaison[0]].classList[1] !== undefined) {
                 console.log('perdu');
-                document.getElementById('display-message').textContent='You loose !';
-                }
+                message.textContent = 'You loose !';
+            }
         });
     };
     
-    cells.forEach(function(cell) {
-        cell.addEventListener('click', function() {
-            if (!partieGagnee) {
-                ajouterSymbole(cell);
-                verifierCombinaisons();
-            }
-        });
+cells.forEach(function(cell) {
+    cell.addEventListener('click', function() {
+        if (!partieGagnee) {
+            ajouterSymbole(cell);
+            verifierCombinaisons();
+        }
     });
+});
     
     
-    var start = document.querySelector(".morpion"),
-    stop = document.querySelector(".stop"),
-    clock = document.querySelector(".clock"),
-    timerState = "stopped", 
-    startTime, elapsed, timer;
+var start = document.querySelector(".morpion"),
+stop = document.querySelector(".stop"),
+clock = document.querySelector(".clock"),
+timerState = "stopped", 
+startTime, elapsed, timer;
 
 
 start.addEventListener("click", function(){
